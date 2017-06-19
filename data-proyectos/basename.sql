@@ -34,7 +34,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- Name: estudiante; Type: TABLE; Schema: public; Owner: reroes
+-- Name: estudiante; Type: TABLE; Schema: public; Owner: taller
 --
 
 CREATE TABLE estudiante (
@@ -47,10 +47,10 @@ CREATE TABLE estudiante (
 );
 
 
-ALTER TABLE estudiante OWNER TO reroes;
+ALTER TABLE estudiante OWNER TO taller;
 
 --
--- Name: estudiante_id_estudiante_seq; Type: SEQUENCE; Schema: public; Owner: reroes
+-- Name: estudiante_id_estudiante_seq; Type: SEQUENCE; Schema: public; Owner: taller
 --
 
 CREATE SEQUENCE estudiante_id_estudiante_seq
@@ -61,17 +61,17 @@ CREATE SEQUENCE estudiante_id_estudiante_seq
     CACHE 1;
 
 
-ALTER TABLE estudiante_id_estudiante_seq OWNER TO reroes;
+ALTER TABLE estudiante_id_estudiante_seq OWNER TO taller;
 
 --
--- Name: estudiante_id_estudiante_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: reroes
+-- Name: estudiante_id_estudiante_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: taller
 --
 
 ALTER SEQUENCE estudiante_id_estudiante_seq OWNED BY estudiante.id_estudiante;
 
 
 --
--- Name: materia; Type: TABLE; Schema: public; Owner: reroes
+-- Name: materia; Type: TABLE; Schema: public; Owner: taller
 --
 
 CREATE TABLE materia (
@@ -80,10 +80,10 @@ CREATE TABLE materia (
 );
 
 
-ALTER TABLE materia OWNER TO reroes;
+ALTER TABLE materia OWNER TO taller;
 
 --
--- Name: materia_id_materia_seq; Type: SEQUENCE; Schema: public; Owner: reroes
+-- Name: materia_id_materia_seq; Type: SEQUENCE; Schema: public; Owner: taller
 --
 
 CREATE SEQUENCE materia_id_materia_seq
@@ -94,17 +94,17 @@ CREATE SEQUENCE materia_id_materia_seq
     CACHE 1;
 
 
-ALTER TABLE materia_id_materia_seq OWNER TO reroes;
+ALTER TABLE materia_id_materia_seq OWNER TO taller;
 
 --
--- Name: materia_id_materia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: reroes
+-- Name: materia_id_materia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: taller
 --
 
 ALTER SEQUENCE materia_id_materia_seq OWNED BY materia.id_materia;
 
 
 --
--- Name: paralelo; Type: TABLE; Schema: public; Owner: reroes
+-- Name: paralelo; Type: TABLE; Schema: public; Owner: taller
 --
 
 CREATE TABLE paralelo (
@@ -115,10 +115,10 @@ CREATE TABLE paralelo (
 );
 
 
-ALTER TABLE paralelo OWNER TO reroes;
+ALTER TABLE paralelo OWNER TO taller;
 
 --
--- Name: paralelo_estudiante; Type: TABLE; Schema: public; Owner: reroes
+-- Name: paralelo_estudiante; Type: TABLE; Schema: public; Owner: taller
 --
 
 CREATE TABLE paralelo_estudiante (
@@ -128,10 +128,10 @@ CREATE TABLE paralelo_estudiante (
 );
 
 
-ALTER TABLE paralelo_estudiante OWNER TO reroes;
+ALTER TABLE paralelo_estudiante OWNER TO taller;
 
 --
--- Name: paralelo_estudiante_id_paralelo_estudiante_seq; Type: SEQUENCE; Schema: public; Owner: reroes
+-- Name: paralelo_estudiante_id_paralelo_estudiante_seq; Type: SEQUENCE; Schema: public; Owner: taller
 --
 
 CREATE SEQUENCE paralelo_estudiante_id_paralelo_estudiante_seq
@@ -142,17 +142,17 @@ CREATE SEQUENCE paralelo_estudiante_id_paralelo_estudiante_seq
     CACHE 1;
 
 
-ALTER TABLE paralelo_estudiante_id_paralelo_estudiante_seq OWNER TO reroes;
+ALTER TABLE paralelo_estudiante_id_paralelo_estudiante_seq OWNER TO taller;
 
 --
--- Name: paralelo_estudiante_id_paralelo_estudiante_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: reroes
+-- Name: paralelo_estudiante_id_paralelo_estudiante_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: taller
 --
 
 ALTER SEQUENCE paralelo_estudiante_id_paralelo_estudiante_seq OWNED BY paralelo_estudiante.id_paralelo_estudiante;
 
 
 --
--- Name: paralelo_id_paralelo_seq; Type: SEQUENCE; Schema: public; Owner: reroes
+-- Name: paralelo_id_paralelo_seq; Type: SEQUENCE; Schema: public; Owner: taller
 --
 
 CREATE SEQUENCE paralelo_id_paralelo_seq
@@ -163,17 +163,17 @@ CREATE SEQUENCE paralelo_id_paralelo_seq
     CACHE 1;
 
 
-ALTER TABLE paralelo_id_paralelo_seq OWNER TO reroes;
+ALTER TABLE paralelo_id_paralelo_seq OWNER TO taller;
 
 --
--- Name: paralelo_id_paralelo_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: reroes
+-- Name: paralelo_id_paralelo_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: taller
 --
 
 ALTER SEQUENCE paralelo_id_paralelo_seq OWNED BY paralelo.id_paralelo;
 
 
 --
--- Name: periodo; Type: TABLE; Schema: public; Owner: reroes
+-- Name: periodo; Type: TABLE; Schema: public; Owner: taller
 --
 
 CREATE TABLE periodo (
@@ -182,10 +182,10 @@ CREATE TABLE periodo (
 );
 
 
-ALTER TABLE periodo OWNER TO reroes;
+ALTER TABLE periodo OWNER TO taller;
 
 --
--- Name: periodo_id_periodo_seq; Type: SEQUENCE; Schema: public; Owner: reroes
+-- Name: periodo_id_periodo_seq; Type: SEQUENCE; Schema: public; Owner: taller
 --
 
 CREATE SEQUENCE periodo_id_periodo_seq
@@ -196,69 +196,69 @@ CREATE SEQUENCE periodo_id_periodo_seq
     CACHE 1;
 
 
-ALTER TABLE periodo_id_periodo_seq OWNER TO reroes;
+ALTER TABLE periodo_id_periodo_seq OWNER TO taller;
 
 --
--- Name: periodo_id_periodo_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: reroes
+-- Name: periodo_id_periodo_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: taller
 --
 
 ALTER SEQUENCE periodo_id_periodo_seq OWNED BY periodo.id_periodo;
 
 
 --
--- Name: id_estudiante; Type: DEFAULT; Schema: public; Owner: reroes
+-- Name: id_estudiante; Type: DEFAULT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY estudiante ALTER COLUMN id_estudiante SET DEFAULT nextval('estudiante_id_estudiante_seq'::regclass);
 
 
 --
--- Name: id_materia; Type: DEFAULT; Schema: public; Owner: reroes
+-- Name: id_materia; Type: DEFAULT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY materia ALTER COLUMN id_materia SET DEFAULT nextval('materia_id_materia_seq'::regclass);
 
 
 --
--- Name: id_paralelo; Type: DEFAULT; Schema: public; Owner: reroes
+-- Name: id_paralelo; Type: DEFAULT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY paralelo ALTER COLUMN id_paralelo SET DEFAULT nextval('paralelo_id_paralelo_seq'::regclass);
 
 
 --
--- Name: id_paralelo_estudiante; Type: DEFAULT; Schema: public; Owner: reroes
+-- Name: id_paralelo_estudiante; Type: DEFAULT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY paralelo_estudiante ALTER COLUMN id_paralelo_estudiante SET DEFAULT nextval('paralelo_estudiante_id_paralelo_estudiante_seq'::regclass);
 
 
 --
--- Name: id_periodo; Type: DEFAULT; Schema: public; Owner: reroes
+-- Name: id_periodo; Type: DEFAULT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY periodo ALTER COLUMN id_periodo SET DEFAULT nextval('periodo_id_periodo_seq'::regclass);
 
 
 --
--- Data for Name: estudiante; Type: TABLE DATA; Schema: public; Owner: reroes
+-- Data for Name: estudiante; Type: TABLE DATA; Schema: public; Owner: taller
 --
 
 COPY estudiante (id_estudiante, nombre, apellido, dob, email, cedula) FROM stdin;
-1	René	Elizalde	1983-11-06	reroes799@gmail.com	11002233
-2	Rolando	Solano	1980-11-06	reroes@reroes.com	11002231
+1	René	Elizalde	1983-11-06	taller799@gmail.com	11002233
+2	Rolando	Solano	1980-11-06	taller@taller.com	11002231
 \.
 
 
 --
--- Name: estudiante_id_estudiante_seq; Type: SEQUENCE SET; Schema: public; Owner: reroes
+-- Name: estudiante_id_estudiante_seq; Type: SEQUENCE SET; Schema: public; Owner: taller
 --
 
 SELECT pg_catalog.setval('estudiante_id_estudiante_seq', 33, true);
 
 
 --
--- Data for Name: materia; Type: TABLE DATA; Schema: public; Owner: reroes
+-- Data for Name: materia; Type: TABLE DATA; Schema: public; Owner: taller
 --
 
 COPY materia (id_materia, nombre) FROM stdin;
@@ -270,14 +270,14 @@ COPY materia (id_materia, nombre) FROM stdin;
 
 
 --
--- Name: materia_id_materia_seq; Type: SEQUENCE SET; Schema: public; Owner: reroes
+-- Name: materia_id_materia_seq; Type: SEQUENCE SET; Schema: public; Owner: taller
 --
 
 SELECT pg_catalog.setval('materia_id_materia_seq', 4, true);
 
 
 --
--- Data for Name: paralelo; Type: TABLE DATA; Schema: public; Owner: reroes
+-- Data for Name: paralelo; Type: TABLE DATA; Schema: public; Owner: taller
 --
 
 COPY paralelo (id_paralelo, nombre, la_materia, la_periodo) FROM stdin;
@@ -288,7 +288,7 @@ COPY paralelo (id_paralelo, nombre, la_materia, la_periodo) FROM stdin;
 
 
 --
--- Data for Name: paralelo_estudiante; Type: TABLE DATA; Schema: public; Owner: reroes
+-- Data for Name: paralelo_estudiante; Type: TABLE DATA; Schema: public; Owner: taller
 --
 
 COPY paralelo_estudiante (id_paralelo_estudiante, la_paralelo, la_estudiante) FROM stdin;
@@ -300,21 +300,21 @@ COPY paralelo_estudiante (id_paralelo_estudiante, la_paralelo, la_estudiante) FR
 
 
 --
--- Name: paralelo_estudiante_id_paralelo_estudiante_seq; Type: SEQUENCE SET; Schema: public; Owner: reroes
+-- Name: paralelo_estudiante_id_paralelo_estudiante_seq; Type: SEQUENCE SET; Schema: public; Owner: taller
 --
 
 SELECT pg_catalog.setval('paralelo_estudiante_id_paralelo_estudiante_seq', 4, true);
 
 
 --
--- Name: paralelo_id_paralelo_seq; Type: SEQUENCE SET; Schema: public; Owner: reroes
+-- Name: paralelo_id_paralelo_seq; Type: SEQUENCE SET; Schema: public; Owner: taller
 --
 
 SELECT pg_catalog.setval('paralelo_id_paralelo_seq', 3, true);
 
 
 --
--- Data for Name: periodo; Type: TABLE DATA; Schema: public; Owner: reroes
+-- Data for Name: periodo; Type: TABLE DATA; Schema: public; Owner: taller
 --
 
 COPY periodo (id_periodo, nombre) FROM stdin;
@@ -326,14 +326,14 @@ COPY periodo (id_periodo, nombre) FROM stdin;
 
 
 --
--- Name: periodo_id_periodo_seq; Type: SEQUENCE SET; Schema: public; Owner: reroes
+-- Name: periodo_id_periodo_seq; Type: SEQUENCE SET; Schema: public; Owner: taller
 --
 
 SELECT pg_catalog.setval('periodo_id_periodo_seq', 4, true);
 
 
 --
--- Name: estudiante_pkey; Type: CONSTRAINT; Schema: public; Owner: reroes
+-- Name: estudiante_pkey; Type: CONSTRAINT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY estudiante
@@ -341,7 +341,7 @@ ALTER TABLE ONLY estudiante
 
 
 --
--- Name: materia_pkey; Type: CONSTRAINT; Schema: public; Owner: reroes
+-- Name: materia_pkey; Type: CONSTRAINT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY materia
@@ -349,7 +349,7 @@ ALTER TABLE ONLY materia
 
 
 --
--- Name: paralelo_estudiante_pkey; Type: CONSTRAINT; Schema: public; Owner: reroes
+-- Name: paralelo_estudiante_pkey; Type: CONSTRAINT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY paralelo_estudiante
@@ -357,7 +357,7 @@ ALTER TABLE ONLY paralelo_estudiante
 
 
 --
--- Name: paralelo_pkey; Type: CONSTRAINT; Schema: public; Owner: reroes
+-- Name: paralelo_pkey; Type: CONSTRAINT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY paralelo
@@ -365,7 +365,7 @@ ALTER TABLE ONLY paralelo
 
 
 --
--- Name: periodo_pkey; Type: CONSTRAINT; Schema: public; Owner: reroes
+-- Name: periodo_pkey; Type: CONSTRAINT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY periodo
@@ -373,7 +373,7 @@ ALTER TABLE ONLY periodo
 
 
 --
--- Name: estudiante_fkey; Type: FK CONSTRAINT; Schema: public; Owner: reroes
+-- Name: estudiante_fkey; Type: FK CONSTRAINT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY paralelo_estudiante
@@ -381,7 +381,7 @@ ALTER TABLE ONLY paralelo_estudiante
 
 
 --
--- Name: materia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: reroes
+-- Name: materia_fkey; Type: FK CONSTRAINT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY paralelo
@@ -389,7 +389,7 @@ ALTER TABLE ONLY paralelo
 
 
 --
--- Name: paralelo_fkey; Type: FK CONSTRAINT; Schema: public; Owner: reroes
+-- Name: paralelo_fkey; Type: FK CONSTRAINT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY paralelo_estudiante
@@ -397,7 +397,7 @@ ALTER TABLE ONLY paralelo_estudiante
 
 
 --
--- Name: periodo_fkey; Type: FK CONSTRAINT; Schema: public; Owner: reroes
+-- Name: periodo_fkey; Type: FK CONSTRAINT; Schema: public; Owner: taller
 --
 
 ALTER TABLE ONLY paralelo
