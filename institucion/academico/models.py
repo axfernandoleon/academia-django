@@ -51,7 +51,8 @@ class Paralelo(models.Model):
         db_table = 'paralelo'
 
     def __unicode__(self):
-        return "%s - %s - %s" % (self.id_paralelo, self.nombre, self.la_periodo)
+        return "%s - %s - %s" % (self.id_paralelo, self.nombre, self.la_periodo.nombre)
+
 
 class ParaleloEstudiante(models.Model):
     id_paralelo_estudiante = models.AutoField(primary_key=True)
@@ -62,6 +63,9 @@ class ParaleloEstudiante(models.Model):
         managed = False
         db_table = 'paralelo_estudiante'
 
+    def __unicode__(self):
+        return "%s - %s" % (self.la_paralelo, self.la_estudiante)
+
 
 class Periodo(models.Model):
     id_periodo = models.AutoField(primary_key=True)
@@ -70,3 +74,6 @@ class Periodo(models.Model):
     class Meta:
         managed = False
         db_table = 'periodo'
+
+    def __unicode__(self):
+        return "%s" % (self.nombre)

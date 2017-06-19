@@ -1,0 +1,63 @@
+{% extends "master.html" %}
+
+
+{% block contenido %}
+
+<h3>{{mensaje}}</h3>
+<hr/>
+
+<div class="row">
+    <div class="col-md-8">
+        <table id="example" class="table table-striped table-bordered display" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Opciones</th>
+                </tr>
+            </tfoot>
+
+            <tbody class="searchable">
+                    {% for p in paralelos%}
+                        <tr>
+                            <td>{{p.id_paralelo}}</td>
+                            <td>{{p.nombre}}</td>
+                            <td>{{p.la_materia_nombre}}</td>
+                            <td><a href="{% url 'paralelo_buscador' p.id_paralelo %}">ver</a></td>
+                        </tr>
+                    {% endfor %}
+                
+            </tbody>
+        </table>
+
+    </div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        console.log('llegando');
+        $('#example tfoot th').each( function () {
+                var title = $('#example thead th').eq( $(this).index() ).text();
+                $(this).html( '<input type="text" placeholder="Buscar '+title+'" />' );
+            } );
+
+            var table = $('#example').DataTable();
+            
+            // Apply the search
+            table.columns().eq( 0 ).each( function ( colIdx ) {
+                $( 'input', table.column( colIdx ).footer() ).on( 'keyup change', function () {
+                    table
+                        .column( colIdx )
+                        .search( this.value )
+                        .draw();
+                } );
+            } );      
+    });
+</script> 
+{% endblock %}
